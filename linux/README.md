@@ -1,0 +1,3 @@
+- [file learning](linux/index/file.md)
+- [file1 learning](linux/index/file1.md)
+- [file2 learning](linux/index/file2.md)
