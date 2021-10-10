@@ -2,15 +2,15 @@
 
 本站源码以及全部内容： [https://github.com/zhoujingfighting/boke](https://github.com/zhoujingfighting/boke)
 
-<img src="https://img.shields.io/github/stars/zhoujingfighting/boke" data-origin="https://img.shields.io/github/stars/zhoujingfighting/blog" alt=""> 
-<img src="https://img.shields.io/github/forks/zhoujingfighting/boke" data-origin="https://img.shields.io/github/forks/zhoujingfighting/blog" alt="">
-<img src="https://img.shields.io/github/license/zhoujingfighting/boke" data-origin="https://img.shields.io/github/license/zhoujingfighting/blog" alt="">
+<img src="https://img.shields.io/github/stars/zhoujingfighting/boke" data-origin="https://img.shields.io/github/stars/zhoujingfighting/boke" alt=""> 
+<img src="https://img.shields.io/github/forks/zhoujingfighting/boke" data-origin="https://img.shields.io/github/forks/zhoujingfighting/boke" alt="">
+<img src="https://img.shields.io/github/license/zhoujingfighting/boke" data-origin="https://img.shields.io/github/license/zhoujingfighting/boke" alt="">
 
 > `docsify`可以快速帮你生成文档网站。不同于 GitBook、Hexo 的地方是它不会生成静态的 .html 文件，所有转换工作都是在运行时。如果你想要开始使用它，只需要创建一个 index.html 就可以开始编写文档并直接部署在`GitHub Pages`。
 
 部署可参考： [https://docsify.js.org/#/zh-cn/deploy](https://docsify.js.org/#/zh-cn/deploy)  
 
-在已经有了诸如 [博客园](https://www.cnblogs.com/zhoujingfighting) 之类的平台，还需要本站是因为放在`GitHub`上托管，可以使用`Git`追踪博客内容的变更，就像维护代码一样，更加清晰明了，数据也不会丢失。
+在已经有了诸如 [知乎](https://www.zhihu.com/people/zhou-jing-5-49) 之类的平台，还需要本站是因为放在`GitHub`上托管，可以使用`Git`追踪博客内容的变更，就像维护代码一样，更加清晰明了，数据也不会丢失。
 
 ## 📚 Blog
 
