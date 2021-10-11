@@ -1,6 +1,6 @@
 leetcode 39 combination sum 难度: medium
 
-[Loading...leetcode.com/problems/combination-sum/![img](https://pic1.zhimg.com/v2-0c435ab948b151fd834be55f80a09794_180x120.jpg)](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/combination-sum/)
+[combination sum](https://leetcode.com/problems/combination-sum)
 
 作为回溯算法的入门题目，还是挺好的
 
@@ -46,7 +46,7 @@ function combinationSum(candidates: number[], target: number): number[][] {
 
 leetcode 40 ,题目难度 medium
 
-[https://leetcode.com/problems/combination-sum-ii/leetcode.com/problems/combination-sum-ii/![img](https://pic1.zhimg.com/v2-0c435ab948b151fd834be55f80a09794_180x120.jpg)](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/combination-sum-ii/)
+[combination sum2](https://leetcode.com/problems/combination-sum-ii/leetcode.com/problems/combination-sum-ii/)
 
 题目梗要大概一致，不同的是**数组中的每一个数字只能用一次**
 

@@ -70,7 +70,7 @@ function fib(n: number): number {
 
 1137.N-th Tribonacci Number 难度: easy
 
-[Loading...leetcode.com/problems/n-th-tribonacci-number/![img](https://pic1.zhimg.com/v2-0c435ab948b151fd834be55f80a09794_180x120.jpg)](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/n-th-tribonacci-number/)
+[Loading...leetcode.com/problems/n-th-tribonacci-number/](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/n-th-tribonacci-number/)
 
 
 
@@ -102,7 +102,7 @@ function tribonacci(n: number): number {
 
 leetCode 70 Climbing stairs 难度: easy,思路同上
 
-[Loading...leetcode.com/problems/climbing-stairs/![img](https://pic1.zhimg.com/v2-0c435ab948b151fd834be55f80a09794_180x120.jpg)](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/climbing-stairs/)
+[Loading...leetcode.com/problems/climbing-stairs](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/climbing-stairs/)
 
 主要思路
 
@@ -132,7 +132,7 @@ function climbStairs(n: number): number {
 
 leetCode 746 Min Cost Climbing Stairs 难度: easy
 
-[Loading...leetcode.com/problems/min-cost-climbing-stairs/![img](https://pic1.zhimg.com/v2-0c435ab948b151fd834be55f80a09794_180x120.jpg)](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/min-cost-climbing-stairs/)
+[Loading...leetcode.com/problems/min-cost-climbing-stairs](https://link.zhihu.com/?target=https%3A//leetcode.com/problems/min-cost-climbing-stairs/)
 
 主要思路
 
