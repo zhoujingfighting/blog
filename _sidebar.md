@@ -11,3 +11,4 @@
 
 * 🍊NodeJs相关
   * [npm使用](NodeJS相关/npm使用.md)
+  * [脚本命令](脚本命令.md)
