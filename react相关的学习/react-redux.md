@@ -18,9 +18,23 @@
 就是我们传递的数据,那么我们在用React开发项目时,大致可以把state分为三类
 - DomainState: 可以理解为服务器端的数据, 比如: 获取用户的信息,商品的列表等等
 - UI State: 决定当前UI决定展示的状态, 比如: 弹框的显示隐藏,受控组件等等
-- App State: App级别的状态, 比如当前是否请求loading,当前路由信息可能被多个组件去使用到的状态等
+- App State: App级别的状态,全局State 比如当前是否请求loading,当前路由信息可能被多个组件去使用到的状态等
 #### Action-事件
 actions是把数据从应用传到`store`的载体, 它是store数据的唯一来源, 一般来说,我们可以通过`store.dispatch(action)`将action传递给sore
 - action本质就是一个`JavaScript`对象
 - action对象内部必须有一个type属性来表示执行的动作
 - 多数情况下.这个type会被定义为要执行的动作
+
+#### Reducer是什么
+reducer本质上是一个函数,它用来响应发送过来的actions,然后经过处理,把state发送给Store的
+注意: 在Reducer函数中,需要return返回值,store才能接收到数据
+<img src='../images/Redux是什么.png'></img>
+
+#### Store
+Store就是把action与reducer联系到一起的对象
+主要职责 : 
+- 维持应用的state
+- 提供getState()方法发送action
+- 提供dispatch方法发送action
+- 通过subscribe()来注册监听
+- 通过subscribe()返回值来注销监听
