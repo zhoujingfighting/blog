@@ -17,6 +17,7 @@
   * [npm使用](NodeJS相关/npm使用.md)
   * [脚本命令](NodeJS相关/脚本命令.md)
   * [express入门](NodeJS相关/express/index.md)
+  * [nodejs事件循环](NodeJS相关/事件循环.md)
 
 * 🐝clang与llvm相关
     * [clang入门](clang与llvm的学习/clang入门.md)
