@@ -24,6 +24,9 @@ function PromiseZhou(resolver) {
     self.reason = null//初始化reject数据
     function resolve(value) {
         setTimeout(function () {
+            /**
+             * settimeout 产生闭包
+             */
             if (self.status !== PENDING) {
                 return
             }
@@ -32,7 +35,7 @@ function PromiseZhou(resolver) {
             for (let i = 0; i < self.resolveCallbacks.length; i++) {
                 self.resolveCallbacks[i](value)
             }
-        }, 0)
+        })
     }
 
     function reject(reason) {
@@ -41,11 +44,11 @@ function PromiseZhou(resolver) {
                 return
             }
             self.status = REJECTED;//同上，改变promise状态
-            self.reason = reason;
+            self.reason = reason;//保存错误信息
             for (let i = 0; i < self.rejectCallbacks.length; i++) {
                 self.rejectCallbacks[i](reason)
             }
-        }, 0)
+        })
     }
     /**
      * resolver调用resolve 和 reject参数
@@ -72,6 +75,9 @@ function resolvePromise(promise, x, resolve, reject) {
                 then.call(x, function rs(y) {
                     if (thenCalledOrThrow) return
                     thenCalledOrThrow = true
+                    /**
+                     * 得继续解析，解析一次，thenCalledOrThrow为 flag，利用了闭包
+                     */
                     return resolvePromise(promise, y, resolve, reject)
                 }, function rj(r) {
                     if (thenCalledOrThrow) return
@@ -122,8 +128,11 @@ PromiseZhou.prototype.then = function then(OnResolved, OnRejected) {
     }
 
     if (self.status === PENDING) {
+        /**
+         * function name need to be paid attention
+         */
         return promiseZhou = new PromiseZhou(function (resolve, reject) {
-            self.resolveCallbacks.push(function OnResolved(value) {
+            self.resolveCallbacks.push(function(value) {
                 try {
                     let resolvedValue = OnResolved(value);
                     resolvePromise(promiseZhou, resolvedValue, resolve, reject)
@@ -131,7 +140,7 @@ PromiseZhou.prototype.then = function then(OnResolved, OnRejected) {
                     return reject(error)
                 }
             })
-            self.rejectCallbacks.push(function OnRejected(reason) {
+            self.rejectCallbacks.push(function(reason) {
                 try {
                     let rejectedValue = OnRejected(reason);
                     resolvePromise(promiseZhou, rejectedValue, resolve, reject)
@@ -167,11 +176,8 @@ PromiseZhou.deferred = function () {
 
     return result;
 }
-debugger
 const pp = PromiseZhou.resolve('123213');
-console.log(pp)
 const pp1 = pp.then(function (res) {
     console.log(res)
 })
-console.log(pp1)
 module.exports = PromiseZhou;
