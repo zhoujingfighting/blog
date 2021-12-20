@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "本站源码以及全部内容： [https://github.com/zhoujingfighting/blog](https://github.com/zhoujingfighting/blog)",
+  "main": "test.js",
+  "scripts": {
+    "test": "promises-aplus-tests test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoujingfighting/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhoujingfighting/blog/issues"
+  },
+  "homepage": "https://github.com/zhoujingfighting/blog#readme",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
+}
