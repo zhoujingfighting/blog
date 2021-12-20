@@ -15,33 +15,41 @@ function PromiseZhou(resolver) {
     }
     let self = this;
     /**
-     * 发布订阅模式 : 详情得参考nodejs的事件模块
+     * 发布订阅模式 : 详情得参考nodejs的事件模块 : http://nodejs.cn/api/events.html
      */
     self.resolveCallbacks = [];//存放成功回调函数集合
     self.rejectCallbacks = [];//存放失败时的回调函数集合
     self.status = PENDING;//存放promise状态，三种。PENDING, FULFILLED, REJECTED 
-
+    self.data = null//初始化resolved数据
+    self.reason = null//初始化reject数据
     function resolve(value) {
-        if (self.status !== PENDING) {
-            return
-        }
-        self.status = FULFILLED;//改变promise状态
-        self.data = value;//存放待处理的数据
-        for (let i = 0; i < self.resolveCallbacks.length; i++) {
-            self.resolveCallbacks[i](value)
-        }
+        setTimeout(function () {
+            if (self.status !== PENDING) {
+                return
+            }
+            self.status = FULFILLED;//改变promise状态
+            self.data = value;//存放待处理的数据
+            for (let i = 0; i < self.resolveCallbacks.length; i++) {
+                self.resolveCallbacks[i](value)
+            }
+        }, 0)
     }
 
     function reject(reason) {
-        if (self.status !== PENDING) {
-            return
-        }
-        self.status = REJECTED;//同上，改变promise状态
-        self.data = reason;
-        for (let i = 0; i < self.rejectCallbacks.length; i++) {
-            self.rejectCallbacks[i](reason)
-        }
+        setTimeout(function () {
+            if (self.status !== PENDING) {
+                return
+            }
+            self.status = REJECTED;//同上，改变promise状态
+            self.reason = reason;
+            for (let i = 0; i < self.rejectCallbacks.length; i++) {
+                self.rejectCallbacks[i](reason)
+            }
+        }, 0)
     }
+    /**
+     * resolver调用resolve 和 reject参数
+     */
     try {
         resolver(resolve, reject);
     } catch (error) {
@@ -49,39 +57,37 @@ function PromiseZhou(resolver) {
     }
 }
 
-//解析promise，返回的是经过处理的promise
-function resolvePromise(promise, handledPromise, resolve, reject) {
-    let then;
-    let thenCalledOrThrow = false;//判断是否继续后续promise操作
-    if (promise === handledPromise) {
-        return reject(new TypeError('Chaining cycle detected for promise'));
+function resolvePromise(promise, x, resolve, reject) {
+    var then
+    var thenCalledOrThrow = false
+
+    if (promise === x) {
+        return reject(new TypeError('Chaining cycle detected for promise!'))
     }
-    if (handledPromise !== null && (typeof handledPromise === 'object' || typeof handledPromise === 'function')) {
+
+    if ((x !== null) && ((typeof x === 'object') || (typeof x === 'function'))) {
         try {
-            then = handledPromise.then;
+            then = x.then
             if (typeof then === 'function') {
-                then.call(handledPromise, function rs(tobeResolved) {
+                then.call(x, function rs(y) {
                     if (thenCalledOrThrow) return
                     thenCalledOrThrow = true
-                    return resolvePromise(promise, tobeResolved, resolve, reject)
-                }, function rj(tobeRejected) {
-                    if (thenCalledOrThrow) return;
+                    return resolvePromise(promise, y, resolve, reject)
+                }, function rj(r) {
+                    if (thenCalledOrThrow) return
                     thenCalledOrThrow = true
-                    return reject(tobeRejected);
+                    return reject(r)
                 })
             } else {
-                return resolve(handledPromise)
+                return resolve(x)
             }
-        }
-        catch (error) {
+        } catch (e) {
             if (thenCalledOrThrow) return
             thenCalledOrThrow = true
-            //为什么需要返回值呢？？？？
-            return reject(error);
+            return reject(e)
         }
     } else {
-        //同上，为什么需要返回值
-        return resolve(handledPromise)
+        return resolve(x)
     }
 }
 PromiseZhou.prototype.then = function then(OnResolved, OnRejected) {
@@ -92,23 +98,26 @@ PromiseZhou.prototype.then = function then(OnResolved, OnRejected) {
     let promiseZhou;
     if (self.status === FULFILLED) {
         return promiseZhou = new PromiseZhou(function (resolve, reject) {
-            try {
-                let resolvedData = OnResolved(self.data);
-                resolvePromise(promiseZhou, resolvedData, resolve, reject)
-            } catch (error) {
-                return reject(error)
-            }
+            setTimeout(function () {
+                try {
+                    let resolvedData = OnResolved(self.data);
+                    resolvePromise(promiseZhou, resolvedData, resolve, reject)
+                } catch (error) {
+                    return reject(error)
+                }
+            }, 0)
         })
     }
-
     if (self.status === REJECTED) {
         return promiseZhou = new PromiseZhou(function (resolve, reject) {
-            try {
-                let rejectData = onRejected(self.data);
-                resolvePromise(promiseZhou, rejectData, resolve, reject)
-            } catch (error) {
-                return reject(error)
-            }
+            setTimeout(function () {
+                try {
+                    let rejectData = onRejected(self.reason);
+                    resolvePromise(promiseZhou, rejectData, resolve, reject)
+                } catch (error) {
+                    return reject(error)
+                }
+            })
         })
     }
 
@@ -138,12 +147,31 @@ PromiseZhou.prototype.catch = function (Onrejected) {
     return this.then(null, Onrejected)
 }
 
-PromiseZhou.prototype.valueOf = function () {
-    return this.data
-}
 PromiseZhou.resolve = function (value) {
-    const promise = new PromiseZhou(function (resolve, reject) {
-        resolvePromise(promise, value, resolve, reject);
+    var promise = new PromiseZhou(function (resolve, reject) {
+        resolvePromise(promise, value, resolve, reject)
     })
     return promise
 }
+PromiseZhou.reject = function (reason) {
+    return new PromiseZhou(function (resolve, reject) {
+        reject(reason)
+    })
+}
+PromiseZhou.deferred = function () {
+    var result = {};
+    result.promise = new PromiseZhou(function (resolve, reject) {
+        result.resolve = resolve;
+        result.reject = reject;
+    });
+
+    return result;
+}
+debugger
+const pp = PromiseZhou.resolve('123213');
+console.log(pp)
+const pp1 = pp.then(function (res) {
+    console.log(res)
+})
+console.log(pp1)
+module.exports = PromiseZhou;
