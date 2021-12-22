@@ -27,7 +27,7 @@ print(mst)
 ###  布尔值
 与其他语言一样，都是为了做逻辑判断
 ```py
-if(a > b){
+if(a > b){ff
     print('FFFF')
 }else{
     print('HHHH)
