@@ -27,3 +27,5 @@
 
 ### 参考的资料链接
 * https://wiki.eryajf.net/pages/63.html#%E5%89%8D%E8%A8%80%E7%B5%AE%E5%8F%A8
+
+> 需要一个linux 虚拟机!!
