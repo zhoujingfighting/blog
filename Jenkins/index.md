@@ -29,3 +29,4 @@
 * https://wiki.eryajf.net/pages/63.html#%E5%89%8D%E8%A8%80%E7%B5%AE%E5%8F%A8
 
 > 需要一个linux 虚拟机!!
+> https://www.jenkins.io/doc/book/installing/linux/
