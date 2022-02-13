@@ -5,6 +5,7 @@
   - [文件搜索](linux/fileSearch.md)
   - [shell 脚本学习](Linux/shell脚本学习.md)
   - [linux 进程相关学习](Linux/控制运行相关.md)
+  - [linux定时调用](Linux/定时调用.md)
 - 🍦 leetcode 与算法相关
   - [backTracking(回溯算法)](leetcode与算法相关/backTracking.md)
   - [一道有意思的算法题](leetcode与算法相关/一道有意思的算法题.md)
