@@ -28,5 +28,50 @@
 ### 参考的资料链接
 * https://wiki.eryajf.net/pages/63.html#%E5%89%8D%E8%A8%80%E7%B5%AE%E5%8F%A8
 
-> 需要一个linux 虚拟机!!
-> https://www.jenkins.io/doc/book/installing/linux/
+## 在linux虚拟机上的实现
+
+参考资料来自于 [jenkins官方文档](https://www.jenkins.io/doc/book/installing/linux/)
+
+### Prerequisites
+最低硬件要求
+* 256 MB of RAM
+* 1 GB of drive space (although 10 GB is a recommended minimum if running Jenkins as a Docker container)
+
+推荐硬件配置
+* 4 GB+ of RAM
+* 50 GB+ of drive space
+
+> 需要分清自己的linux系统版本！！
+
+### 安装Java环境（我的linux虚拟机是centos版本）
+```bash
+yum update 
+# 更新的package更新到源中的最新版
+yum search openjdk
+# 查看完之后选一个jdk8版本的java
+yum install -y javaJdk@version
+# -y 选项是可以回答所有安装过程的问题为yes,不用手动操作
+java -version
+```
+
+### 安装Jenkins
+```bash
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo yum upgrade
+sudo yum install chkconfig java-devel
+sudo yum  install jenkins
+# 如果是root用户则不用sudo
+```
+
+### 启动Jenkins 
+```bash
+systemctl daemon-reload
+# https://unix.stackexchange.com/questions/364782/what-does-systemctl-daemon-reload-do
+systemctl start jenkins
+systemctl status jenkins
+```
+
+
+后面的按照官方教程一步步操作就好了
