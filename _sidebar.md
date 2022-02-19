@@ -35,6 +35,6 @@
 - 🦉 工具相关
   - [docker](工具相关/docker相关/mac.md)
   - [Jenkins](工具相关/Jenkins/index.md)
-  - [git相关](工具相关/husky相关/index.md)
+  - [git相关](工具相关/Git相关/husky.md)
 - 🤺 theia 相关
   - [theia相关知识点 链接](theia相关/index.md)

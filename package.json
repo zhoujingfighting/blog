@@ -4,6 +4,7 @@
   "description": "本站源码以及全部内容： [https://github.com/zhoujingfighting/blog](https://github.com/zhoujingfighting/blog)",
   "main": "test.js",
   "scripts": {
+    "prepare": "husky install",
     "test": "promises-aplus-tests test",
     "test:husky": "echo test husky!!!"
   },
