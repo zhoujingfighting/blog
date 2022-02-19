@@ -32,9 +32,9 @@
   - [redux 学习](react相关的学习/react-redux.md)
 - 🐛 数据库基础
   - [基础语法练习](数据库相关/基本语法练习.md)
-- 🦉docker 相关
-  - [docker 入门](docker相关/mac.md)
-- 🎅Jenkins 相关
-  - [Jenkins 入门](Jenkins/index.md)
+- 🦉 工具相关
+  - [docker](工具相关/docker相关/mac.md)
+  - [Jenkins](工具相关/Jenkins/index.md)
+  - [git相关](工具相关/husky相关/index.md)
 - 🤺 theia 相关
   - [theia相关知识点 链接](theia相关/index.md)

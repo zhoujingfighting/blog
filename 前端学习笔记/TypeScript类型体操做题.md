@@ -88,3 +88,6 @@ type Length<T extends any> = T extends { length: number } ? T["length"] : never;
 ```
 
 > <font color='red'>T 应该有一个 length 属性</font>
+
+### Implement the built-in Exclude<T, U>
+> Exclude from T those types that are assignable to U
