@@ -13,3 +13,24 @@ find /etc -name *init*
 1数据块 512字节 0.5MB
 放放光
 ### find / -user +204800
+
+查找home目录下的hello.txt文件
+```shell
+find /home -name hello.txt
+```
+
+### locate
+### which
+* 可以查看指令存放在哪个目录下!
+
+### grep指令与管道符号
+
+管道符号: '|'
+* 钱一个指令的处理结果传给后面的指令处理
+
+应用实例
+```shell
+# 请在hello.txt文件中.查找yes所在行,并显示行号
+cat /home/hello.txt | grep -n "yes"
+grep -n "yes" /home/hello.txt
+```

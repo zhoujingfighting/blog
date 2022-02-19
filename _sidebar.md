@@ -36,5 +36,5 @@
   - [docker 入门](docker相关/mac.md)
 - 🎅Jenkins 相关
   - [Jenkins 入门](Jenkins/index.md)
-- 🎅theia 相关
+- 🤺 theia 相关
   - [theia相关知识点 链接](theia相关/index.md)
