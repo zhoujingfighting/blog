@@ -20,8 +20,7 @@
   },
   "homepage": "https://github.com/zhoujingfighting/blog#readme",
   "dependencies": {
-    "husky": "^7.0.4",
-    "promises-aplus-tests": "^2.1.2"
+    "husky": "^7.0.4"
   },
   "husky": {
     "hooks": {
