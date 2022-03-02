@@ -55,6 +55,51 @@ void symon(int n){
 > q1: 编写一个C++程序，它显示您的姓名和地址。
  
  ```cpp
+#include <iostream>
 
+using namespace std;
 
+int main(){
+    std::cout << "我的名字叫周晶!" << endl;
+    std:cout << "我住在武汉！" << endl;
+    return 0;
+}
  ```
+> q2: 编写一个C++程序，它要求用户输入一个以long为单位的距离，然后将它转换为码（一long等于220码）
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int count(int number);
+int main(){
+    std::cout << "请输入数字：";
+    int a;
+    std::cin >> a;
+    std::cout << "转换之后的码数是：" << count(a) << endl;
+    return count(a);
+}
+int count(int number){
+    return 220 * number; 
+}
+```
+> q7: 编写一个C++程序，要求用户输入小孩数与分钟数。在main()中，将这两个值传递给一个void函数，后面以下面这样的格式显示这样的值
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int count(int number);
+int main(){
+    std::cout << "Enter the number of hours: ";
+    int hour;
+    std::cin >> hour;
+    std::cout << "Enter the number of minutes: ";
+    int minute;
+    std::cin >> minute;
+    std::cout << "Time: " << hour << ":" << minute << endl;
+    return 0;
+}
+```
