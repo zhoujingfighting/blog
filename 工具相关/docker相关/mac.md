@@ -62,7 +62,26 @@ docker image ls
 ```js
 $ docker container run -p 8000:3000 -it koa-demo /bin/bash
 ```
+
 - -p 参数：容器的 3000 端口映射到本机的 8000 端口
 - -it 参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器
 - koa-demo:0.0.1：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签
 - /bin/bash：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell
+
+### docker与jenkins的联合
+官方文档地址:https://github.com/jenkinsci/docker
+docker 先拉取下来一个Jenkins的镜像
+```shell
+docker pull jenkins/jenkins:lts-jdk11
+```
+这个需要花费一些时间,下载下来之后,运行命令
+```shell
+docker run -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts-jdk11
+```
+
+* 第一个8080:8080是本地端口，可以本地访问
+* 第二个50000:50000是容器暴露出来的端口
+* jenkins_home:/var/jenkins_home jenkins所有运行的数据都存在hostmachine:`/var/jenkins_home`上
+* 运行的是`jenkins/jenkins:lts-jdk11`这个docker image.
+
+后续！！
