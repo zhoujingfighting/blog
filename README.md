@@ -1,4 +1,5 @@
 # 🎉 关于本站
+<audio src='陈雪凝 - 白山茶.mp3' controls loop autoplay style="display:none"></audio>
 
 本站源码以及全部内容： [https://github.com/zhoujingfighting/blog](https://github.com/zhoujingfighting/blog)
 
