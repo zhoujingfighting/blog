@@ -42,3 +42,4 @@
   - [c语言](其他编程语言相关/c语言入门/index.md)
     - [排序算法](其他编程语言相关/c语言入门/排序算法.md)
     - [typedef](其他编程语言相关/c语言入门/typedef.md)
+    - [makefile](其他编程语言相关/c语言入门/makefile.md)
