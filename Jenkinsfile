@@ -13,7 +13,7 @@ pipeline {
             returnStdout: true
         )
     }
-    agent { docker { image 'node:16.13.1-alpine' } }
+    agent { label: "zhoujing" }
     stages {
         stage('builddddss') {
             steps {
