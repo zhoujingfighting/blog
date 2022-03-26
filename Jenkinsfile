@@ -13,11 +13,21 @@ pipeline {
             returnStdout: true
         )
     }
-    agent { label: "zhoujing" }
+    agent any
     stages {
-        stage('builddddss') {
+        stage('Build') {
             steps {
-                sh 'node --version'
+                echo 'Building'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
             }
         }
     }
