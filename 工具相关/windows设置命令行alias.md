@@ -2,7 +2,10 @@
 
 一般是在用户根目录下创建一个.bat文件, 名字随便起,例如`auto_run.bat`
 我的电脑上这个文件路径就是:`c:/user/admin/auto_run.bat`
-
+```shell
+@echo off
+doskey sshlinux1=ssh user@1232.2323.232.323//demo
+```
 
 ## 在windows注册表上添加
 
