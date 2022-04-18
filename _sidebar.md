@@ -39,6 +39,7 @@
   - [git相关](工具相关/Git相关/husky.md)
   - [slidev](工具相关/vercel.md)
   - [windows命令alias](工具相关/windows设置命令行alias.md)
+  - [一些好用的工具](工具相关/一些好用的软件.md)
 - 🍒其他编程语言相关
   - [python](其他编程语言相关/python基础入门/python.md)
   - [cpp](其他编程语言相关/cpp基础入门/cpp.md)
