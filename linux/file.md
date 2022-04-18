@@ -1,4 +1,6 @@
-```js
+### 针对文件比较常见的命令
+
+```shell
 ls -ld : -d选项是只列出当前文件夹信息
 ls -i 查询任意文件的i节点信息
 mkdir -p 递归创建不存在的目录 
@@ -31,12 +33,16 @@ head 只显示文件前几行
 tail 只显示最后几行
 - tail -n 3 xxx
 - tail -f 动态监视文件变化
+```
 
-
-链接命
+### 文件夹(文件)的链接
 ln 硬链接
+
 ln -s 软链接
-    - ln -s [源文件] [目标文件] : 绝对路径
+
+```shell
+ln -s [源文件] [目标文件] : 绝对路径
+```
 
 软连接相当于windows快捷方式
 需要找到源文件,权限取决于源文件的权限
@@ -46,12 +52,51 @@ ln -s 软链接
     - 不能跨分区
     - 不能针对目录使用
 
+### find命令
 
-
-
-
-
-
-
+语法 : find [搜索范围] [匹配条件]
+```js
+find /etc -name init
+find /etc -name *init*
 
 ```
+只有init文件才会被搜索
+
+**find / -size +204800**
+
+在根目录下查找大100MB的文件
++n 大于 -n 小于 n等于
+1数据块 512字节 0.5MB
+放放光
+
+**find / -user +204800**
+
+查找home目录下的hello.txt文件
+```shell
+find /home -name hello.txt
+```
+### which
+可以查看指令存放在哪个目录下!
+```shell
+which node
+which npm
+```
+
+### grep指令与管道符号
+
+管道符号: '|'
+前一个指令的处理结果传给后面的指令处理
+
+应用实例
+```shell
+# 请在hello.txt文件中.查找yes所在行,并显示行号
+cat /home/hello.txt | grep -n "yes"
+grep -n "yes" /home/hello.txt
+```
+
+
+
+
+
+
+
