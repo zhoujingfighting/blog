@@ -33,3 +33,10 @@
 * windows平台我使用的是`nvm`
   * 使用方法就是`nvm install [node_vsersion]`,`nvm use [node_version]`,填上合适的node 版本就好
 
+## npm的命令使用技巧
+
+### 搜索某个package的所有信息
+
+```shell
+npm view <package> versions
+```
