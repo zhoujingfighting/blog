@@ -32,7 +32,17 @@
   * 使用方法就是`n install [node_vsersion]`,`n use [node_version]`,填上合适的node 版本就好
 * windows平台我使用的是`nvm`
   * 使用方法就是`nvm install [node_vsersion]`,`nvm use [node_version]`,填上合适的node 版本就好
+* linux平台
 
+下载nvm:
+```shell
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+
+#编辑~/.bash_profile等
+#https://github.com/nvm-sh/nvm#troubleshooting-on-linux
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
 ## npm的命令使用技巧
 
 ### 搜索某个package的所有信息
