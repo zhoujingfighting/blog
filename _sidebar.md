@@ -26,6 +26,7 @@
   - [express 入门](NodeJS相关/express/index.md)
   - [nodejs 事件循环](NodeJS相关/事件循环.md)
   - [nodejs 全局变量](NodeJS相关/全局对象.md)
+  - [nodejs 进程](NodeJS相关/进程相关.md)
 
 - 🐝clang 与 llvm 相关
 
