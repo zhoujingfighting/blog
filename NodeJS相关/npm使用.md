@@ -50,3 +50,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ```shell
 npm view <package> versions
 ```
+
+#### 搜索某个package的所有依赖关系
+
+```shell
+npx npm-remote-ls [package name]
+```
