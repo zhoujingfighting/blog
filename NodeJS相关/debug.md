@@ -59,3 +59,13 @@ debugger client 一般都是有 ui 的（当然，在命令行里面通过命令
 在根目录`.vscode/launch.json`添加一个 launch 的配置
 
 <img src='../images/nodejs-debug-config3.png'>
+
+
+## 特别放送
+
+在使用vscode debug typeScript的时候, 遇到的报错
+
+
+* Cannot find module 'ts-node/register'
+  
+  解决办法: `npm install ts-node --save-dev`
