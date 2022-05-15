@@ -69,3 +69,7 @@ debugger client 一般都是有 ui 的（当然，在命令行里面通过命令
 * Cannot find module 'ts-node/register'
   
   解决办法: `npm install ts-node --save-dev`
+
+* 有时候TS-DEBUG不生效
+
+    需要把其他的文件断点删除掉
