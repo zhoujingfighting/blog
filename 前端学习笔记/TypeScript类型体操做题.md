@@ -91,3 +91,31 @@ type Length<T extends any> = T extends { length: number } ? T["length"] : never;
 
 ### Implement the built-in Exclude<T, U>
 > Exclude from T those types that are assignable to U
+
+
+## StartsWith
+
+判断字符串是否以某个前缀开头，也是通过模式匹配：
+
+```ts
+type StartsWith<Str extends string , prefix extends string> = 
+    Str extends `${prefix}${string}` ? true : false
+// 这里的技巧值得学习
+    
+type test = StartsWith<"feffefe", "fefe"> //false
+```
+
+## replace
+字符串可以匹配一个模式类型，提取想要的部分，自然也可以用这些再构成一个新的类型。
+比如实现字符串替换：
+
+```ts
+type ReplaceString<
+    Str extends string,
+    From extends string, 
+    To extends string
+    > = Str extends `${infer prefix}${From}${infer suffix}` ? 
+    `${prefix}${To}${suffix}` : Str
+
+type test1 = ReplaceString<"zhoujing has ?", '?', "friends"> //占位符的使用
+```
