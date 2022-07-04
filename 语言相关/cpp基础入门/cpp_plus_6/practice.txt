@@ -1,0 +1,64 @@
+1．编写一个程序，读取键盘输入，直到遇到@符号为止，并回显
+输入（数字除外），同时将大写字符转换为小写，将小写字符转换为大
+写（别忘了cctype函数系列）。
+
+2．编写一个程序，最多将10个donation值读入到一个double数组中
+（如果您愿意，也可使用模板类array）。程序遇到非数字输入时将结束
+输入，并报告这些数字的平均值以及数组中有多少个数字大于平均值。
+
+4.  When you join the Benevolent Order of Programmers, you can be known at BOP
+    meetings by your real name, your job title, or your secret BOP name. Write a
+    program that can list members by real name, by job title, by secret name, or
+    by a member’s preference. Base the program on the following structure:
+
+    // Benevolent Order of Programmers name structure
+    struct bop {
+        char fullname[strsize]; // real name
+        char title[strsize]; // job title
+        char bopname[strsize]; // secret BOP name
+        int preference; // 0 = fullname, 1 = title, 2 = bopname
+    };
+
+    In the program, create a small array of such structures and initialize it to
+    suitable values. Have the program run a loop that lets the user select from
+    different alternatives:
+
+    a. display by name b. display by title
+    c. display by bopname d. display by preference
+    q. quit
+
+    Note that “display by preference” does not mean display the
+    preferencemember; it means display the member corresponding to the
+    preference number. For instance, if preference is 1, choice d would display
+    the programmer’s job title. A sample run may look something like the
+    following:
+
+    Benevolent Order of Programmers Report
+    a. display by name b. display by title
+    c. display by bopname d. display by preference
+    q. quit
+    Enter your choice: a
+    Wimp Macho
+    Raki Rhodes
+    Celia Laiter
+    Hoppy Hipman
+    Pat Hand
+    Next choice: d
+    Wimp Macho
+    Junior Programmer
+    MIPS
+    Analyst Trainee
+    LOOPY
+    Next choice: q
+    Bye!
+
+7. 编写一个程序，它每次读取一个单词，直到用户只输入q。然后，该程序指出有多少个单词以元音打头，有多少个单词以辅音打头，还有多少个单词不属于这两类。为此，方法之一是，使用isalpha( )来区
+分以字母和其他字符打头的单词，然后对于通过了isalpha( )测试的单词，使用if或switch语句来确定哪些以元音打头。该程序的运行情况如下：
+    Enter words (q to quit):
+    The 12 awesome oxen ambled
+    quietly across 15 meters of lawn. q
+    5 words beginning with vowels
+    4 words beginning with consonants
+    2 others
+
+    
