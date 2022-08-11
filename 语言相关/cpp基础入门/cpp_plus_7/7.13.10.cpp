@@ -23,7 +23,7 @@ int main(void)
     double (*pf[size])(double, double) = {add, mut, sub};//初始化一个
     while(cin >> x ){
         cin.get();
-        (cin >>y).get();
+        (cin >> y).get();
         calculator(x, y, pf, size);
 
     }
