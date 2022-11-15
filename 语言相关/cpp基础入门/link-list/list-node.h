@@ -6,6 +6,7 @@
 #define LIST_NODE_H
 
 #include <iostream>
+#include <vector>
 struct ListNode {
   int val;
   ListNode *next;
