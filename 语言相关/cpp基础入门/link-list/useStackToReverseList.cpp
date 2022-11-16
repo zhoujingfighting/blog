@@ -19,20 +19,21 @@ extern ListNode *convertArrayToListNode(std::vector<int> Array);
 /// @return a new ListNode
 ListNode *reverseListByStack(std::vector<int> Input){
     //std::vector<int> Input = {1,2,3,4,5,6,7,8,9};  // The tested array
-    std::stack<int> Stack;
+    std::stack<ListNode *> Stack;
     ListNode *InputList = convertArrayToListNode(Input);
     while(InputList) {
-        Stack.push(InputList->val);
+        Stack.push(InputList);
         InputList = InputList->next;
     }
     // Now, we need to pop Stack to get new ListNode
     ListNode *Dummy = new ListNode(0);
     ListNode *Head = Dummy;
     while(!Stack.empty()) {
-        Dummy->next = new ListNode(Stack.top());
+        Dummy->next = Stack.top();
         Stack.pop();
         Dummy = Dummy->next;
     }
+    Dummy->next = nullptr;
     return Head->next;
 }
 
