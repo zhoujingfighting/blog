@@ -1,0 +1,47 @@
+{
+    "clangd.arguments": [
+      "--clang-tidy=false",
+      "--header-insertion=never",
+      "--compile-commands-dir=${workspaceFolder}/build"
+    ],
+    "clangd.fallbackFlags": [
+      "-I/usr/include/llvm",
+      "-I/usr/include/llvm-c",
+      "-I${workspaceFolder}/include"
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/SwapSomeInstruction",
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.generator": "Ninja",
+    "cmake.parallelJobs": 24,
+    "cmake.configureArgs": [
+      "-DCMAKE_CXX_STANDARD=17",
+      // "-DCLANG_BUILD_TOOLS=OFF",
+      // "-DCLANG_ENABLE_STATIC_ANALYZER=ON",
+      // "-DCLANG_DEFAULT_RTLIB=compiler-rt",
+      // "-DCLANG_DEFAULT_CXX_STDLIB=libc++",
+      // "-DCLANG_DEFAULT_UNWINDLIB=libunwind",
+      "-DLLVM_CCACHE_BUILD=ON",
+      "-DCMAKE_LINKER=lld",
+      // "-DLLVM_OPTIMIZED_TABLEGEN=ON",
+      // "-DLLVM_TABLEGEN=llvm-tblgen",
+      // "-DLLVM_USE_LINKER=lld",
+      "-DCMAKE_BUILD_TYPE=Debug"
+      // "-DLLVM_ENABLE_PROJECTS=clang",
+      // "-DLLVM_DEFAULT_TARGET_TRIPLE=riscv64-unknown-elf",
+      // "-DLLVM_TARGETS_TO_BUILD=RISCV;X86;AArch64",
+      // "-DLLVM_TARGET_ARCH=riscv64",
+    ],
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+      "*.def": "cpp",
+      "*.inc": "cpp",
+      "iterator": "cpp",
+      "cstddef": "cpp"
+    },
+    "C_Cpp.default.includePath": [
+      //"/opt/llvm/include",
+      "${workspaceFolder}/include"
+    ],
+    "clangd.path": "/home/triton/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/15.0.3/clangd_15.0.3/bin/clangd"
+  }
