@@ -13,10 +13,11 @@
 #include <map>
 #include <stack>
 #include <string>
+#include <limits.h>
 
 using namespace std;
 
-std::map<char, int> OperatorPre{{'+', 10}, {'-', 10}, {'*', 20}, {'/', 20}};
+std::map<char, int> OperatorPre{{'+', 10}, {'-', 10}, {'*', 20}, {'/', 20}, {'(', INT_MIN}};
 
 /// @brief Judge whether a paren is an opening flag
 /// @param input an input char token
@@ -58,7 +59,7 @@ bool isOperator(char ope) {
 }
 
 /// Input is a infix string, for example it can be  like this:((A+B)*C-D)*E
-/// The postfix expression AB+*CD-E*
+/// The postfix expression AB+C*D-E*
 std::string infixToPostfix(std::string Input) {
   stack<char> Operands;
   string Result = "";
@@ -74,7 +75,7 @@ std::string infixToPostfix(std::string Input) {
     } else if (isOperator(Input[i])) {
       // If top of stack operator's priority is higher than Input[i]
       // pop top and append Input[i] to Result
-      if (OperatorPre[Operands.top()] > OperatorPre[Input[i]]) {
+      if (!Operands.empty() && OperatorPre[Operands.top()] > OperatorPre[Input[i]]) {
         Result += Operands.top();
         Operands.pop();
       }
