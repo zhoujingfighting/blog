@@ -45,6 +45,18 @@ bool isClosParen(char input) {
   }
 }
 
+bool isOperator(char ope) {
+  switch (ope) {
+  case '+':
+  case '-':
+  case '*':
+  case '/':
+    return true;
+  default:
+    return false;
+  }
+}
+
 /// Input is a infix string, for example it can be  like this:((A+B)*C-D)*E
 /// The postfix expression AB+*CD-E*
 std::string infixToPostfix(std::string Input) {
@@ -59,8 +71,30 @@ std::string infixToPostfix(std::string Input) {
         Operands.pop();
       }
       Operands.pop(); //
+    } else if (isOperator(Input[i])) {
+      // If top of stack operator's priority is higher than Input[i]
+      // pop top and append Input[i] to Result
+      if (OperatorPre[Operands.top()] > OperatorPre[Input[i]]) {
+        Result += Operands.top();
+        Operands.pop();
+      }
+      Operands.push(Input[i]);
+    } else {
+      // Pure char to be appended into Result
+      Result += Input[i];
     }
   }
+  // If the stack is not empty, add all these operators to Result
+  while (!Operands.empty()) {
+    Result += Operands.top();
+    Operands.pop();
+  }
+  return Result;
 }
 
-int main() { return 0; }
+int main( ) {
+  string Test = "((A+B)*C-D)*E";
+  std::cout << "===<<>>====" << endl;
+  std::cout << infixToPostfix(Test) << endl;
+  return 0;
+}
