@@ -2,6 +2,11 @@
 
 # THis is for updating settings.json file for VScode project
 ROOT_FOLDER="${1}"
+
+if [ -z "${1}" ];then
+    ROOT_FOLDER=`cd $(dirname $0);pwd`
+
+echo ${ROOT_FOLDER}
 # if specified VScode root folder,use this folder
 if [ -f  ${ROOT_FOLDER}/.vscode/settings.json ]; then
     rm ${ROOT_FOLDER}/.vscode/settings.json
