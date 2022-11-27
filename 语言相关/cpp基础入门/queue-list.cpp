@@ -27,8 +27,8 @@ using namespace std;
 /// We use link-list to implement a Queue
 class Queue {
 private:
-  ListNode *Top = nullptr; // Top element
-  ListNode *Rear = nullptr; // Tail element
+  ListNode *Top;  // Top element
+  ListNode *Rear; // Tail element
 
 public:
   Queue(vector<int>);
@@ -45,21 +45,21 @@ public:
 /// @param InitializedNumbers
 Queue::Queue(vector<int> InitializedNumbers) {
   // if empty, return directly
-  if (InitializedNumbers.empty())
+  if (InitializedNumbers.size() == 0)
     return;
   ListNode *Dummy = Top;
   for (auto init : InitializedNumbers) {
-    ListNode *NewNode = new ListNode(init);
-    Dummy->next = NewNode;
+    Dummy->next = new ListNode(init);
     Dummy = Dummy->next;
   }
+  Top = Top->next;
   Rear = Dummy; // The tail element
   // Now we finish initializing the queue
 }
 
 void Queue::deQueue() {
   if (!Top) {
-    cout << "Queue is empty, can not dequeue, please check";
+    cout << "Queue is empty, can not dequeue, please check" << endl;
     return;
   }
   if (Top == Rear) {
@@ -80,7 +80,7 @@ int Queue::front() {
   if (Top)
     return Top->val;
   cout << "Queue is empty, can not get top element" << endl;
-  return NULL;
+  return 1;
 }
 
 void Queue::printQue() {
@@ -94,7 +94,8 @@ void Queue::printQue() {
 }
 
 int main() {
-  Queue Que({1, 2, 3, 4, 5, 6});
+  vector<int> test{1, 2, 3, 4, 5, 6};
+  Queue Que(test);
   Que.enQueue(7);
   Que.printQue(); // Enter an element to queue
   Que.deQueue();
