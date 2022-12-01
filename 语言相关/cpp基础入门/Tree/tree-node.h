@@ -14,11 +14,18 @@
 /// 2 : organize data : quick search,insertion,deletion ==>> binary search trees
 /// 3 : Trie ==>> dictionary
 /// 4 : Network Routing algorithm
-struct TreeNode
+
+#ifndef TREE_NODE_H
+#define TREE_NODE_H
+#include <iostream>
+using namespace std;
+typedef struct TreeNode
 {
     int val;
     TreeNode* left;
     TreeNode* right;
     TreeNode(int val) : val(val),left(nullptr),right(nullptr){};
     TreeNode(int val, TreeNode* left, TreeNode* right) : val(val),left(left),right(right){};
-};
+} TreeNode;
+
+#endif
