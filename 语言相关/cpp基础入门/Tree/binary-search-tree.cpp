@@ -31,7 +31,8 @@ void insertBST(TreeNode *&root, int val) {
   }
 }
 
-extern void printPrefixTree(TreeNode *root);
+extern void printPreOrderTree(TreeNode *root);
+extern void printInOrderTree(TreeNode *root);
 int main() {
   TreeNode *root = getNewNode(20);
   insertBST(root, 30);
@@ -41,6 +42,7 @@ int main() {
   insertBST(root, 1);
   insertBST(root, 24);
   insertBST(root, 41);
-  printPrefixTree(root);
+  printPreOrderTree(root);
+  printInOrderTree(root);
   return 0;
 }

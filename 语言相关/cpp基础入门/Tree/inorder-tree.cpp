@@ -3,7 +3,7 @@
 #include <stack>
 using namespace std;
 /// We define a function to print a tree in prefix order
-void printPrefixTree(TreeNode *root) {
+void printInOrderTree(TreeNode *root) {
   // We use stack to do this
   stack<TreeNode *> treeNodes;
   cout << "Prefix tree is: ";
