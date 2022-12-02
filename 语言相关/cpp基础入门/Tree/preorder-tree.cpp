@@ -16,15 +16,14 @@ using namespace std;
 void printPreOrderTree(TreeNode *root) {
   // We use stack to do this
   stack<TreeNode *> treeNodes;
-  cout << "Prefix tree is: ";
+  cout << "PostOrder tree is: ";
   while (true) {
     while (root) {
-      cout << treeNodes.top()->val << " ";
+      cout << root->val << " ";
       treeNodes.push(root);
       root = root->left;
     }
     if (!treeNodes.empty()) {
-
       if (treeNodes.top()->right) {
         root = treeNodes.top()->right;
       }
