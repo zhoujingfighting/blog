@@ -7,7 +7,7 @@ void printPrefixTree(TreeNode *root) {
   // We use stack to do this
   stack<TreeNode *> treeNodes;
   cout << "Prefix tree is: ";
-  while (root || !treeNodes.empty()) {    
+  while (true) {    
     while (root)    {
       treeNodes.push(root);
       root = root->left;
@@ -16,7 +16,6 @@ void printPrefixTree(TreeNode *root) {
       cout << treeNodes.top()->val << " ";
       if (treeNodes.top()->right) {
         root = treeNodes.top()->right;
-        treeNodes.push(treeNodes.top()->right);
       }        
       treeNodes.pop();
     } else

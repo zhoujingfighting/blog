@@ -38,6 +38,9 @@ int main() {
   insertBST(root, 10);
   insertBST(root, 25);
   insertBST(root, 40);
+  insertBST(root, 1);
+  insertBST(root, 24);
+  insertBST(root, 41);
   printPrefixTree(root);
   return 0;
 }
