@@ -16,7 +16,7 @@ using namespace std;
 void printPreOrderTree(TreeNode *root) {
   // We use stack to do this
   stack<TreeNode *> treeNodes;
-  cout << "PostOrder tree is: ";
+  cout << "PreOrder tree is: ";
   while (true) {
     while (root) {
       cout << root->val << " ";

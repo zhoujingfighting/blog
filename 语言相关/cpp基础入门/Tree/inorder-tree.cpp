@@ -6,7 +6,7 @@ using namespace std;
 void printInOrderTree(TreeNode *root) {
   // We use stack to do this
   stack<TreeNode *> treeNodes;
-  cout << "Prefix tree is: ";
+  cout << "InOrder tree is: ";
   while (true) {    
     while (root)    {
       treeNodes.push(root);
