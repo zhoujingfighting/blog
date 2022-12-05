@@ -33,6 +33,14 @@ void insertBST(TreeNode *&root, int val) {
 
 extern void printPreOrderTree(TreeNode *root);
 extern void printInOrderTree(TreeNode *root);
+extern void printPostOrderTree(TreeNode *root);
+///                 20
+///                /  \
+///               10   30
+///              /    /  \
+///             1    25  40
+///                 /      \
+///                24       41
 int main() {
   TreeNode *root = getNewNode(20);
   insertBST(root, 30);
@@ -44,5 +52,6 @@ int main() {
   insertBST(root, 41);
   printPreOrderTree(root);
   printInOrderTree(root);
+  printPostOrderTree(root);
   return 0;
 }
