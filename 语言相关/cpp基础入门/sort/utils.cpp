@@ -10,8 +10,8 @@ void swap(int *input, int start, int end) {
     }
 }
 
-void print(int *input, int size) {
+void printStep(int *input, int size) {
     for(int i = 0 ; i < size ; i ++) {
-        std::cout << input[i] << " " << std::endl;
+        std::cout << input[i] << " ";
     }
 }
