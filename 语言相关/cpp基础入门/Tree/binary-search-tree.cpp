@@ -10,25 +10,16 @@ TreeNode *getNewNode(int val) { return new TreeNode(val); }
 
 /// Insert a val into BST
 /// We assume no values are equal
-void insertBST(TreeNode *&root, int val) {
+TreeNode *insertBST(TreeNode *&root, int val) {
   TreeNode *node = getNewNode(val);
   if (!root) {
-    root = node;
-    return;
-  } else if (!root->left && !root->right) {
-    if (root->val >= val) {
-      root->left = node;
-      return;
-    } else {
-      root->right = node;
-      return;
-    }
-  } else {
-    if (root->val >= val)
-      return insertBST(root->left, val);
-    else
-      return insertBST(root->right, val);
+    return root = node;
   }
+  if (root->val >= val)
+    root->left = insertBST(root->left, val);
+  else
+    root->right = insertBST(root->right, val);
+  return root;
 }
 
 extern void printPreOrderTree(TreeNode *root);
