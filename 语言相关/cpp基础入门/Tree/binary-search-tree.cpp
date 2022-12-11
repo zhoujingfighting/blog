@@ -5,6 +5,7 @@
 ///  or equal to the value of all the nodes in right subtree is greater
 
 #include "tree-node.h"
+#include <iostream>
 
 TreeNode *getNewNode(int val) { return new TreeNode(val); }
 
@@ -25,6 +26,8 @@ TreeNode *insertBST(TreeNode *&root, int val) {
 extern void printPreOrderTree(TreeNode *root);
 extern void printInOrderTree(TreeNode *root);
 extern void printPostOrderTree(TreeNode *root);
+extern int findMin(TreeNode *root);
+extern int findMax(TreeNode *root);
 ///                 20
 ///                /  \
 ///               10   30
@@ -44,5 +47,7 @@ int main() {
   printPreOrderTree(root);
   printInOrderTree(root);
   printPostOrderTree(root);
+  std::cout << "The minimum element in this BST is: " << findMin(root) << std::endl;
+  std::cout << "The maximum element in this BST is: " << findMax(root) << std::endl;
   return 0;
 }
