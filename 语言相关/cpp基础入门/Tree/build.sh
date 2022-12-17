@@ -5,5 +5,6 @@ clang++ inorder-tree.cpp \
     binary-search-tree.cpp \
     postorder-tree.cpp \
     findMinandMax.cpp \
+    check-valid-BST.cpp \
     -g \
     -o testTree

@@ -26,6 +26,7 @@ TreeNode *insertBST(TreeNode *&root, int val) {
 extern void printPreOrderTree(TreeNode *root);
 extern void printInOrderTree(TreeNode *root);
 extern void printPostOrderTree(TreeNode *root);
+extern bool checkvalidBST(TreeNode *root);
 extern int findMin(TreeNode *root);
 extern int findMax(TreeNode *root);
 ///                 20
@@ -49,5 +50,7 @@ int main() {
   printPostOrderTree(root);
   std::cout << "The minimum element in this BST is: " << findMin(root) << std::endl;
   std::cout << "The maximum element in this BST is: " << findMax(root) << std::endl;
+  if(checkvalidBST(root))
+    std::cout << "This tree is valid BST" << std::endl;
   return 0;
 }
