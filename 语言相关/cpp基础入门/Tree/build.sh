@@ -6,5 +6,6 @@ clang++ inorder-tree.cpp \
     postorder-tree.cpp \
     findMinandMax.cpp \
     check-valid-BST.cpp \
+    delete-node-from-BST.cpp \
     -g \
     -o testTree
