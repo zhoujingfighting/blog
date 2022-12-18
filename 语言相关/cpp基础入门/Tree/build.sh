@@ -8,4 +8,5 @@ clang++ inorder-tree.cpp \
     check-valid-BST.cpp \
     delete-node-from-BST.cpp \
     -g \
-    -o testTree
+    -o testTree \
+    -std=c++17

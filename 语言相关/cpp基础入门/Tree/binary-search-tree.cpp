@@ -35,13 +35,14 @@ extern int findMax(TreeNode *root);
 ///               10   30
 ///              /    /  \
 ///             1    25  40
-///                 /      \
-///                24       41
+///                 /  \   \
+///                24   26  41
 int main() {
   TreeNode *root = getNewNode(20);
   insertBST(root, 30);
   insertBST(root, 10);
   insertBST(root, 25);
+  insertBST(root, 26);
   insertBST(root, 40);
   insertBST(root, 1);
   insertBST(root, 24);
@@ -53,7 +54,10 @@ int main() {
   std::cout << "The maximum element in this BST is: " << findMax(root) << std::endl;
   if(checkvalidBST(root))
     std::cout << "This tree is valid BST" << std::endl;
-  deleteNodeFromBST(root,24);
+  deleteNodeFromBST(root,30);
+  printPreOrderTree(root);
+  deleteNodeFromBST(root,25);
+  printPreOrderTree(root);
   if(checkvalidBST(root))
     std::cout << "This tree is valid BST" << std::endl;
   return 0;
