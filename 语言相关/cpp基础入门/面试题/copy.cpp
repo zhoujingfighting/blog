@@ -8,25 +8,32 @@ class A {
 private:
   int len;
   int *pt;
+
 public:
-  A(int len, int*p) : len(len) {
+  A(int len, int *p) : len(len) {
     pt = new int(*p);
     // Here we can not use syntax below, we need to
     // pt = p
-    // destructor will free the memory , what we thought is free the memory owned by the class itself
-    // the syntax above will free the memory the pointer points to which is owned by other object
+    // destructor will free the memory , what we thought is free the memory
+    // owned by the class itself the syntax above will free the memory the
+    // pointer points to which is owned by other object
   }
-  void print(){
-    cout << "len's address: " << &len << " : " <<  len << endl;
-    cout << "pt's address: " << pt << " : " <<  *pt << endl;
+  A(const A &a) {
+    len = a.len;
+    pt = new int(*a.pt);
+  }
+  ~A() { delete pt; }
+  void print() {
+    cout << "len's address: " << &len << " : " << len << endl;
+    cout << "pt's address: " << pt << " : " << *pt << endl;
   }
 };
 
-int main(){
+int main() {
   int i = 100;
-  cout << "i's address: " << &i << " : " <<  i << endl;
+  cout << "i's address: " << &i << " : " << i << endl;
   A a(5, &i);
-  A b = a; // b.len = a.len; b.pt = a.pt;
+  A b(a); // A b(a) = A b = a;
   a.print();
   b.print();
   /*
@@ -40,6 +47,7 @@ int main(){
   // That is to say : shallow copy
   // b's pt pointer point to the same memory space which belongs to a's pointer
   // but a'pt pointer's space is created by itself, after a is destructed,
-  // when b is destructed, b's pt pointer points to nowhere, the destructor will cause problems(pointer hanging)
+  // when b is destructed, b's pt pointer points to nowhere, the destructor will
+  // cause problems(pointer hanging)
   return 0;
 }
