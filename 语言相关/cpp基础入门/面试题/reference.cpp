@@ -9,8 +9,9 @@ using namespace std;
 int main() {
   int a = 10;
   //int &b = a;
-  //__TEXT  __DATA  __OBJC  others  dec     hex
-  //16384   0       0       4294983680      4295000064      100008000
+	//
+	//text	   data	    bss	    dec	    hex	filename
+  //1712	    656	      8	   2376	    948	a.out
   // cout << "b's size is : " << sizeof(int &) << endl;
   // cout << "b's size is : " << sizeof(char &) << endl;
   // cout << "b's size is : " << sizeof(float &) << endl;
