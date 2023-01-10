@@ -8,11 +8,13 @@ using namespace std;
 
 int main() {
   int a = 10;
-  int *b = &a;
-  cout << "b's size is : " << sizeof(int &) << endl;
-  cout << "b's size is : " << sizeof(char &) << endl;
-  cout << "b's size is : " << sizeof(float &) << endl;
-  cout << "b's size is : " << sizeof(double &) << endl;
+  //int &b = a;
+  //__TEXT  __DATA  __OBJC  others  dec     hex
+  //16384   0       0       4294983680      4295000064      100008000
+  // cout << "b's size is : " << sizeof(int &) << endl;
+  // cout << "b's size is : " << sizeof(char &) << endl;
+  // cout << "b's size is : " << sizeof(float &) << endl;
+  // cout << "b's size is : " << sizeof(double &) << endl;
   // b's size is : 4
   // b's size is : 1
   // b's size is : 4
@@ -25,16 +27,16 @@ int main() {
   // 引用所占用的内存与指针所占用的内存一样
   // 上述sizeof实际查看的是所引用对象的内存大小
 
-  cout << "b's size is : " << sizeof(int *) << endl;
-  cout << "b's size is : " << sizeof(char *) << endl;
-  cout << "b's size is : " << sizeof(float *) << endl;
-  cout << "b's size is : " << sizeof(double *) << endl;
+  // cout << "b's size is : " << sizeof(int *) << endl;
+  // cout << "b's size is : " << sizeof(char *) << endl;
+  // cout << "b's size is : " << sizeof(float *) << endl;
+  // cout << "b's size is : " << sizeof(double *) << endl;
   //b's size is : 8
   //b's size is : 8
   //b's size is : 8
   //b's size is : 8
 
   // 可以用unix下的size命令行来精准查看引用的大小
-  
+
   return 0;
 }
