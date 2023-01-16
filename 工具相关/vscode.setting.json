@@ -1,0 +1,147 @@
+{
+  "terminal.integrated.tabs.enabled": true,
+  "javascript.validate.enable": false,
+  "explorer.confirmDelete": false,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "off",
+  "typescript.locale": "en",
+  "auto-close-tag.activationOnLanguage": [
+      "xml",
+      "php",
+      "blade",
+      "ejs",
+      "jinja",
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact",
+      "plaintext",
+      "markdown",
+      "vue",
+      "liquid",
+      "erb",
+      "lang-cfml",
+      "cfml",
+      "HTML (EEx)",
+      "HTML (Eex)",
+      "plist"
+  ],
+  "files.autoSave": "afterDelay",
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "workbench.tree.indent": 4,
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb",
+      "terminal.background": "#090300",
+      "terminal.foreground": "#A5A2A2",
+      "terminalCursor.background": "#A5A2A2",
+      "terminalCursor.foreground": "#A5A2A2",
+      "terminal.ansiBlack": "#090300",
+      "terminal.ansiBlue": "#01A0E4",
+      "terminal.ansiBrightBlack": "#5C5855",
+      "terminal.ansiBrightBlue": "#01A0E4",
+      "terminal.ansiBrightCyan": "#B5E4F4",
+      "terminal.ansiBrightGreen": "#01A252",
+      "terminal.ansiBrightMagenta": "#A16A94",
+      "terminal.ansiBrightRed": "#DB2D20",
+      "terminal.ansiBrightWhite": "#F7F7F7",
+      "terminal.ansiBrightYellow": "#FDED02",
+      "terminal.ansiCyan": "#B5E4F4",
+      "terminal.ansiGreen": "#01A252",
+      "terminal.ansiMagenta": "#A16A94",
+      "terminal.ansiRed": "#DB2D20",
+      "terminal.ansiWhite": "#A5A2A2",
+      "terminal.ansiYellow": "#FDED02"
+  },
+  "http.proxySupport": "off",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.automationShell.windows": "",
+  "editor.detectIndentation": false,
+  "editor.fontLigatures": null,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.scrollback": 10000,
+  "workbench.editor.enablePreview": false,
+  "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "[json]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+      "datas",
+      "devexpress",
+      "inversify",
+      "misra",
+      "pahdxg",
+      "rhbuit",
+      "riscv",
+      "Terapines",
+      "theia",
+      "toolchains",
+      "zchecker",
+      "zckecker's",
+      "zstudio"
+  ],
+  "[javascript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[markdown]": {
+      "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
+  },
+  "[cpp]": {
+      "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "bracketPairColorizer.depreciation-notice": false,
+  "[c]": {
+      "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "cSpell.customDictionaries": {
+      "custom-dictionary-user": {
+          "name": "custom-dictionary-user",
+          "path": "~/.cspell/custom-dictionary-user.txt",
+          "addWords": true,
+          "scope": "user"
+      }
+  },
+  "[vue]": {
+      "editor.defaultFormatter": "octref.vetur"
+  },
+  "[scss]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.defaultProfile.linux": "bash",
+  "workbench.colorTheme": "Default Light+",
+  "clangd.detectExtensionConflicts": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "[prisma]": {
+      "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "clangd.path": "/usr/local/opt/llvm/bin/clangd",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "editor.rulers": [80]
+}
