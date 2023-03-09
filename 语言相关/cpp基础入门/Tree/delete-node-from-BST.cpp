@@ -7,14 +7,14 @@
 #include <utility>
 
 /// Find the largest node for the given deleted node;
-TreeNode *findMaxNode(TreeNode *root) {
+TreeNode<int> *findMaxNode(TreeNode<int> *root) {
   if (!root->right)
     return root;
   return findMaxNode(root->right);
 }
 
 /// Judge a node hs only one child
-bool hasOneChild(TreeNode *root) {
+bool hasOneChild(TreeNode<int> *root) {
   if (root->left && !root->right)
     return true;
   else if (root->right && !root->left)
@@ -22,7 +22,7 @@ bool hasOneChild(TreeNode *root) {
   return false;
 }
 
-TreeNode *getChild(TreeNode *root) {
+TreeNode<int> *getChild(TreeNode<int> *root) {
   if (root->left)
     return root->left;
   return root->right;
@@ -41,7 +41,7 @@ TreeNode *getChild(TreeNode *root) {
 /// delete duplicate    delete duplicate
 ///  from right-sub       from left-sub
 /// Here we decide to use solution2
-TreeNode *deleteNodeFromBST(TreeNode *root, int val) {
+TreeNode<int> *deleteNodeFromBST(TreeNode<int> *root, int val) {
   if (root == nullptr)
     return root;
   if (val > root->val)
@@ -56,21 +56,21 @@ TreeNode *deleteNodeFromBST(TreeNode *root, int val) {
       return root;
     }// case2 : one child
     else if (!root->left) {
-        TreeNode* tmp = root;
+        TreeNode<int>* tmp = root;
         root = root->right;
         delete tmp;
         return root;
-    } 
+    }
     else if (!root->right) {
-        TreeNode* tmp = root;
+        TreeNode<int>* tmp = root;
         root = root->left;
         delete tmp;
         return root;
     } else {
         // case 3 : two sub child tree
-        TreeNode *MaxNode = findMaxNode(root->left);
+        TreeNode<int> *MaxNode = findMaxNode(root->left);
         root->val = MaxNode->val;
-        TreeNode *left = root->left;
+        TreeNode<int> *left = root->left;
         // delete root->left;
         //delete left;
         //std::cout << left->val << left << std::endl;
