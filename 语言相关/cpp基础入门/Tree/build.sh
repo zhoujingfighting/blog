@@ -7,6 +7,7 @@ clang++ inorder-tree.cpp \
     findMinandMax.cpp \
     check-valid-BST.cpp \
     delete-node-from-BST.cpp \
+    heap-sort.cpp \
     -g \
     -o testTree \
     -std=c++17

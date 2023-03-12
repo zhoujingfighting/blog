@@ -13,9 +13,9 @@
 #include <stack>
 using namespace std;
 /// We define a function to print a tree in inOrder
-void printPreOrderTree(TreeNode *root) {
+void printPreOrderTree(TreeNode<int> *root) {
   // We use stack to do this
-  stack<TreeNode *> treeNodes;
+  stack<TreeNode<int> *> treeNodes;
   cout << "PreOrder tree is: ";
   while (true) {
     while (root) {

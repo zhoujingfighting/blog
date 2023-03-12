@@ -7,12 +7,12 @@
 #include "tree-node.h"
 #include <iostream>
 
-TreeNode *getNewNode(int val) { return new TreeNode(val); }
+TreeNode<int> *getNewNode(int val) { return new TreeNode<int>(val); }
 
 /// Insert a val into BST
 /// We assume no values are equal
-TreeNode *insertBST(TreeNode *&root, int val) {
-  TreeNode *node = getNewNode(val);
+TreeNode<int> *insertBST(TreeNode<int> *&root, int val) {
+  TreeNode<int> *node = getNewNode(val);
   if (!root) {
     return root = node;
   }
@@ -23,13 +23,13 @@ TreeNode *insertBST(TreeNode *&root, int val) {
   return root;
 }
 
-extern void printPreOrderTree(TreeNode *root);
-extern void printInOrderTree(TreeNode *root);
-extern void printPostOrderTree(TreeNode *root);
-extern void deleteNodeFromBST(TreeNode *root, int val);
-extern bool checkvalidBST(TreeNode *root);
-extern int findMin(TreeNode *root);
-extern int findMax(TreeNode *root);
+extern void printPreOrderTree(TreeNode<int> *root);
+extern void printInOrderTree(TreeNode<int> *root);
+extern void printPostOrderTree(TreeNode<int> *root);
+extern void deleteNodeFromBST(TreeNode<int> *root, int val);
+extern bool checkvalidBST(TreeNode<int> *root);
+extern int findMin(TreeNode<int> *root);
+extern int findMax(TreeNode<int> *root);
 ///                 20
 ///                /  \
 ///               10   30
@@ -38,7 +38,7 @@ extern int findMax(TreeNode *root);
 ///                 /  \   \
 ///                24   26  41
 int main() {
-  TreeNode *root = getNewNode(20);
+  TreeNode<int> *root = getNewNode(20);
   insertBST(root, 30);
   insertBST(root, 10);
   insertBST(root, 25);
@@ -50,15 +50,17 @@ int main() {
   printPreOrderTree(root);
   printInOrderTree(root);
   printPostOrderTree(root);
-  std::cout << "The minimum element in this BST is: " << findMin(root) << std::endl;
-  std::cout << "The maximum element in this BST is: " << findMax(root) << std::endl;
-  if(checkvalidBST(root))
+  std::cout << "The minimum element in this BST is: " << findMin(root)
+            << std::endl;
+  std::cout << "The maximum element in this BST is: " << findMax(root)
+            << std::endl;
+  if (checkvalidBST(root))
     std::cout << "This tree is valid BST" << std::endl;
-  deleteNodeFromBST(root,30);
+  deleteNodeFromBST(root, 30);
   printPreOrderTree(root);
-  deleteNodeFromBST(root,25);
+  deleteNodeFromBST(root, 25);
   printPreOrderTree(root);
-  if(checkvalidBST(root))
+  if (checkvalidBST(root))
     std::cout << "This tree is valid BST" << std::endl;
   return 0;
 }

@@ -19,13 +19,14 @@
 #define TREE_NODE_H
 #include <iostream>
 using namespace std;
-typedef struct TreeNode {
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode(int val) : val(val), left(nullptr), right(nullptr){};
-  TreeNode(int val, TreeNode *left, TreeNode *right)
+
+template <class T> struct TreeNode {
+  T val;
+  TreeNode<int> *left;
+  TreeNode<int> *right;
+  TreeNode<int>(T val) : val(val), left(nullptr), right(nullptr){};
+  TreeNode<int>(T val, TreeNode<int> *left, TreeNode<int> *right)
       : val(val), left(left), right(right){};
-} TreeNode;
+};
 
 #endif

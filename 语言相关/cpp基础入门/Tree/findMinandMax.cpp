@@ -1,9 +1,9 @@
 /**
- * find the max and min element in a BST tree 
+ * find the max and min element in a BST tree
 */
 
 #include "tree-node.h"
-int findMin(TreeNode* root) {
+int findMin(TreeNode<int>* root) {
     // FIXME: maybe need to pay attention
     // when the root is null
     if(!root->left)
@@ -11,7 +11,7 @@ int findMin(TreeNode* root) {
     return findMin(root->left);
 }
 
-int findMax(TreeNode* root) {
+int findMax(TreeNode<int>* root) {
     if(!root->right)
         return root->val;
     return findMax(root->right);
