@@ -22,11 +22,6 @@
   "dependencies": {
     "husky": "^7.0.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run test:husky"
-    }
-  },
   "devDependencies": {
     "ts-node": "^10.7.0"
   }
