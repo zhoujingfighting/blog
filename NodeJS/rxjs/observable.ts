@@ -20,3 +20,4 @@ const sumObserver = {
 
 of(1,2,3) // Symchronously emits 1,2,3 and then complete
     .subscribe(sumObserver);
+of([1,2,3]).subscribe((v) => console.info(v));
