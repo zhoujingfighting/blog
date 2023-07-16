@@ -1,0 +1,14 @@
+{
+  "name": "rxjs",
+  "version": "1.0.0",
+  "description": "Rxjs learning",
+  "scripts": {
+    "test:observable": "ts-node-dev --respawn --transpile-only observable.ts"
+  },
+  "dependencies": {
+    "lodash":"latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
