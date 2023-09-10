@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(cpp_larning)
+project(cpp_learning)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 17)
@@ -12,18 +12,11 @@ FetchContent_Declare(
   URL https://github.com/google/googletest/archive/8a6feabf04bec8fb125e0df0ad1195c42350725f.zip
 )
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 FetchContent_MakeAvailable(googletest)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 enable_testing()
 
-add_executable(
-  hello_test
-  hello_test.cpp
-)
-target_link_libraries(
-  hello_test
-  GTest::gtest_main
-)
-
-include(GoogleTest)
-gtest_discover_tests(hello_test)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)

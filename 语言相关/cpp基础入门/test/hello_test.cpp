@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include "first_test.h" 
 
 // Demonstrate some basic assertions.
 TEST(HelloTest, BasicAssertions) {
@@ -6,4 +7,9 @@ TEST(HelloTest, BasicAssertions) {
   EXPECT_STRNE("hello", "world");
   // Expect equality.
   EXPECT_EQ(7 * 6, 42);
+}
+
+TEST(FACTOR, IsrightOrnot) {
+  EXPECT_EQ(fac(3), 6);
+  EXPECT_EQ(fac(4), 24);
 }

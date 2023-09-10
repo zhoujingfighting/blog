@@ -11,3 +11,10 @@ If you need to have llvm first in your PATH, run:
 For compilers to find llvm you may need to set:
   export LDFLAGS="-L/usr/local/opt/llvm/lib"
   export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+
+## Using gtest
+
+Under root directory:
+
+`cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
