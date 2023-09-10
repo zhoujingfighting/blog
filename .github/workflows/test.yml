@@ -2,8 +2,9 @@ name: Build and Test
 
 on:
   push:
+    branches: [ master dev ]
+  pull_request:
     branches: [ master ]
-
 jobs:
   build:
 
@@ -14,8 +15,13 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
+        node-version: '16.x'
     - name: Install Dependencies
       run: npm install
-    - name: Run Tests
-      run: echo "Test"
+
+    - name: Run cpp tests
+      run: cd ${{github.workspace}}/语言相关/cpp基础入门
+           cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+           cmake --build build
+           cd build
+           make test
