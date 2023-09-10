@@ -1,12 +1,13 @@
 add_executable(
-  hello_test
-  hello_test.cpp
+  cpp_test
+  test.cpp
   first_test.cpp
 )
 target_link_libraries(
-  hello_test
+  cpp_test
   GTest::gtest_main
+  src
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(cpp_test)
