@@ -4,3 +4,4 @@ yarn.lock
 *.txt
 **/*/*.out
 !**/*/CMakeLists.txt
+**/build
